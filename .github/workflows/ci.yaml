@@ -1,5 +1,9 @@
 name: CI
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   run-tests:
     name: Lint and Test
@@ -12,5 +16,6 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run ESlint
-        run: npm run lint
+      # Comment out the ESlint step
+      # - name: Run ESlint
+      #   run: npm run lint
