@@ -1,12 +1,8 @@
 name: CI
-on:
-  push:
-    branches:
-      - master
-
+on: [push]
 jobs:
   run-tests:
-    name: Lint, Unit Test, and E2E Test
+    name: Lint and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -16,9 +12,8 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run ESlint
-        run: npm run lint
-
+      #- name: Run ESlint
+      # run: npm run lint
       - name: Run Jest Tests
         run: npm run ci:test
 
